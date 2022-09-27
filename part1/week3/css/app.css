@@ -1,0 +1,15 @@
+.chalkboard {
+    color: #E8E8E8;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    min-height: auto;
+    margin: 30px auto 0 auto;
+    background-color: #497959;
+    padding: 20px 30px;
+    overflow-y: auto;
+    box-shadow: -1px 2px 2px 0 #555, inset 0 0 10px 0 #555;
+    --webkit-border-radius:10px;
+    border-radius: 10px;
+    border: #b78240;
+    position: relative;
+}
