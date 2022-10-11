@@ -99,7 +99,7 @@ function init() {
 
 function nextPlayer() {
     //determine when the nextPlayer is active
-    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0; 
     roundScore = 0;
 
     // set the score in the ui
@@ -111,5 +111,5 @@ function nextPlayer() {
     // reset the dice before we move onto the next roll
     document.getElementById('dice-1').style.display = 'none';
     document.getElementById('dice-2').style.display = 'none';
-    console.log('Player score', document.getElementsByClassName('player-current-score'))
+    
 }
