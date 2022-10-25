@@ -82,9 +82,12 @@
         let n = Math.floor(Math.random() * questions.length);
         questions[n].displayQuestion();
         let answer = prompt('Please select the correct answer');
+        debugger;
         if(answer !== 'exit') {
             questions[n].checkAnswer(parseInt(answer), score);
             nextQuestion()
+        } else {
+            // quit the game
         }
     }
 
