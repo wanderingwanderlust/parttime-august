@@ -12,8 +12,9 @@ var database = firebase.database();
 var masterMovieObject;
 var movieArray = [];
 var randMANum;
+const apiKey = 'enter_yourapikeyhere'
 var randomPageNumber = Math.floor(Math.random() * 300) + 1;
-var queryURL = 'https://api.themoviedb.org/3/movie/popular?api_key=ee2e00cb4eb46b7262f08bc8d337cc19&language=en-US&page=' + randomPageNumber;
+var queryURL = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=${randomPageNumber}`;
 var questionCounter = 0;
 var score = 0;
 var lowestScore;
@@ -122,7 +123,7 @@ var nextQuestion = function(){
 }
 
 //Pulls data into movieArray and displays the first question
-var playGame = function(){
+var playGame = async function(){
 	questionCounter = 0;
 	score = 0;
 	movieArray = [];
@@ -143,6 +144,11 @@ var playGame = function(){
 	$('.end').addClass('hidden');
 	//Show progress bar
 	$('.progress').removeClass('hidden');
+	let  res =  await fetch('queryUrl')
+	for(i = 0; i < res.)
+	
+
+
 	$.ajax({
       url: queryURL,
       method: 'GET'
@@ -175,6 +181,7 @@ var playGame = function(){
 
 		pullFacts();
 	});
+
     //Making lowestScore equal to zero
     lowestScore = 0;
     //Sees how many hiscores are in Firebase
