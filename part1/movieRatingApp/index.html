@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Limelight' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+		<link href='assets/css/style.css' rel='stylesheet'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css'>
+		<title>Armchair Movie Critic</title>
+	</head>
+	<body>
+		<!-- Page content -->
+		<div class='header'>
+				 <div class='row'>
+				 	<div class='col-md-12'>
+				 		<div class='progress hidden'>
+  							<div class='progress-bar' role='progressbar' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100' style='width: 10%;'>
+						    	Question 1 out of 10
+							</div>
+						</div>
+				 	</div>
+				 </div>
+			</div>
+
+		<div class='container'>
+			<!-- Instructions screen -->
+			<div class='instructions'>
+				<div class='row'>
+					<div class='col-md-12'>
+						<div class='instructions-content text-center'>
+							<h1>Armchair Movie Critic</h1>
+							<h2></h2>
+							<p class='howTo'>Each game, you'll be shown 10 randomly selected film posters. Based on the poster and/or your knowledge of the film, try and guess the rating. You'll score points based on accuracy.</p>
+							<button onclick='playGame()' class='btn btn-primary btn-lg'>Play</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Game screen -->
+			<div class='main hidden'>
+				<div class='row text-center'>
+					<!-- Cover/Poster image -->
+					<div class='col-md-6'>
+						<div class='image frame'></div>
+					</div>
+					<!-- Input/Other -->
+					<div class='col-md-6'>
+						<!-- Input score -->
+							<div class='col-md-12'>
+								<div class='input-screen'>
+									<div class='row'>
+									<!-- userGuess -->
+                                    	<div class='text-center' id='rateYo'></div>
+                                	<!-- display userGuess-->    
+                                    	<div class='text-center' id='rateYoRating'></div>
+									</div>
+									<div class='row'>
+										<button onclick='submitInput()' class='btn btn-primary btn-lg'>Submit</button>
+									</div>
+								</div>
+
+								<div class='results-screen hidden'>
+									<div class='row'>
+										<div class='movie-score'>
+											<!--Movie score goes here -->
+											<div class='row'>
+	                                            <div class='text-center' id='rateYo2'></div>
+	                                            <div class='text-center' id='rateYo2Rating'></div>
+	                                        </div>
+										</div>
+									</div>
+									<div class='row' id='scoreStatus'></div>
+									<div class='row'>
+										<button onclick='nextQuestion()' class='next btn btn-primary btn-lg'>Next</button>
+										<button onclick='endGame()' class='end btn btn-primary btn-lg hidden'>End Game</button>
+									</div>
+									<div class='row'>
+										<div class='fact text-left'>
+											<div class='panel panel-default'>
+												<div class='panel-heading'></div>
+												<div class='panel-body'>
+													<p class='directors'></p>
+													<p class='writers'></p>
+													<p class='actors'></p>
+													<p class='plot'></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- End screen -->
+			<div class='end-screen hidden'>
+				<div class='row'>
+					<div class='col-md-12 text-center'>
+						<h1 class='score'></h1>
+						<br>
+						<h3>HISCORES</h3>
+						<table id='hiscoreTable' class='table text-left'>
+							<thead>
+								<tr>
+									<th>Initials</th>
+									<th>Score</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<button onclick='playGame()' class='btn btn-primary btn-lg'>Play again</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Enter Hiscore screen -->
+			<div class='enter-hiscore hidden'>
+				<div class='row'>
+					<div class='col-md-12 text-center'>
+						<h2>Congratulations, you got a hiscore!</h2>
+						<h3>Enter your initials:</h3>
+						<!-- THIS IS WHERE THE INITIALS PART WILL GO -->
+						<form>
+							<input type='text' id='hiscoreNameOne' class='init' maxlength='1' pattern='[A-Za-z]{1}'>
+							<input type='text' id='hiscoreNameTwo' class='init' maxlength='1' pattern='[A-Za-z]{1}'>
+							<input type='text' id='hiscoreNameThree' class='init' maxlength='1' pattern='[A-Za-z]{1}'>
+							<br>
+							<input type='submit' value='Submit Hiscore' onclick='sendHiscore()'>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='https://www.gstatic.com/firebasejs/4.3.1/firebase.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src='https://www.gstatic.com/firebasejs/4.3.0/firebase.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js'></script>
+		<script src='assets/js/app.js'></script>
+		
+	</body>
+</html>
