@@ -4,6 +4,7 @@ import CardStrap from '../../partials/CardStrap';
 import { CardGroup, Nav } from 'react-bootstrap';
 import ToDo from '../ToDo';
 import axios from 'axios'
+import ToDoClass from '../ToDoClass';
 
 
 function HomePage() {
@@ -57,7 +58,12 @@ function HomePage() {
           </CardGroup>
         </div>
         <div className='row'>
-          <ToDo />
+          <div className='col-md-6'>
+            <ToDo />
+          </div>
+          <div className='col-md-6'>
+            <ToDoClass />
+          </div>
         </div>
       </div>
       </div>

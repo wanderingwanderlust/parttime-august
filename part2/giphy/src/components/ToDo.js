@@ -47,10 +47,6 @@ function ToDo() {
             </ul>
         </div>
     )
-
-
-
-
 }
 
 export default ToDo;
