@@ -3,13 +3,13 @@ import CarouselStrap from '../CarouselStrap';
 import CardStrap from '../../partials/CardStrap';
 import { CardGroup, Nav } from 'react-bootstrap';
 import ToDo from '../ToDo';
-import axios from 'axios'
+import axios from 'axios';
 import ToDoClass from '../ToDoClass';
 
 
 function HomePage() {
 
-    const apiKey = '6HdufP6nLgDzMy9VoZFe9OdpCXZlAu7i';
+  const apiKey = '6HdufP6nLgDzMy9VoZFe9OdpCXZlAu7i';
   const [homeImages, setHomeImages] = useState([]);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ function HomePage() {
 
     return (
         <div>
-        {/* Move all of this code to a HomePage Component */}
       <h1>Giphy App</h1>
       <div className='app'>
       <div className='container'>
