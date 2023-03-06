@@ -36,7 +36,6 @@ function RegisterPage() {
                 <input placeholder='username' value={username} onChange={(e) => setUsername(e.target.value) } />
                 <input placeholder='password' type='password' value={password} onChange={(e) => setPassword(e.target.value) } />
                 <button className='btn btn-primary'>Create Account</button>
-
             </form>
         </div>
     )

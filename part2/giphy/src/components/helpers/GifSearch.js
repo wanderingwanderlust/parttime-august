@@ -46,7 +46,7 @@ function GifSearch() {
 
     // we will want to be able to save this data to a db, but for now localStorage
     const save = (gif_url) => {
-
+        console.log(gif_url)
     }
 
 

@@ -14,7 +14,14 @@ function LoginPage() {
     const login = (e) => {
         e.preventDefault();
         console.log(username, password)
+        const localUsers = localStorage.getItem('user')
+        const jsonUser = JSON.parse(localUsers)
         // check localStorage, 
+        if(jsonUser.email === username && jsonUser.password === password) {
+            console.log(true)
+        }else {
+            console.log(false)
+        }
         navigate(from)
     }
 
