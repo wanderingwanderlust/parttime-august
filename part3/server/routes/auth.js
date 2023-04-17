@@ -1,5 +1,10 @@
 import express from "express";
 import User from "../models/User.js";
+import jsonwebtoken from "jsonwebtoken";
+
+const accessTokenSecret = 'somerandomaccesstoken';
+const refreshTokenSecret = 'somerandomrefreshtoken';
+const refreshTokens = [];
 
 const router = express.Router();
 
@@ -19,9 +24,21 @@ router.post('/login', (req, res) => {
             }
 
             if(isMatch) {
-                // we need to eventually add accessToken, refreshTokeb, verifiedUser jsonWebTokens
+                const accessToken = jsonwebtoken.sign(
+                    {username: user.username, id: user._id}, // token
+                    accessTokenSecret, // secret used to sign the token
+                    {expiresIn: '120m'} // token details
+                )
+
+                const refreshToken = jsonwebtoken.sign(
+                    {username: user.username, id: user._id}, // token
+                    refreshTokenSecret
+                )
+
+                const decodedUser = jsonwebtoken.verify(accessToken, accessTokenSecret)
+                refreshTokens.push(refreshToken)
                 const message = `${username} successfully logged in`
-                res.json(message)
+                res.json(accessToken, refreshToken, decodedUser, message)
             }
         })
     })

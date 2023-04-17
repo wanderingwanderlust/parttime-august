@@ -7,3 +7,5 @@ const GifSchema = new mongoose.Schema({
 })
 
 export default mongoose.model('gif', GifSchema)
+
+
