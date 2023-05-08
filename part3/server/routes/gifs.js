@@ -43,8 +43,33 @@ router.post('/', (req, res) => {
 })
 
 // Update Gifs
+// Params - GIF_ID(required) ( JSON BodyURL(option) TITLE(optional), USER_ID(optional))
+router.put('/:id', (req, res) => {
+    Gif.findByIdAndUpdate(req.params.id, {title: req.body.title}, (err, result) => {
+        if(err) {
+            console.log(err);
+            res.send('error')
+        } else {
+            console.log(result)
+            res.send(`succssfully updated GIF title to be ${result.title}`)
+        }
+    })
+})
 
 // Delete Gifs
+// Params - GIF_ID (required)
+// Response - 204 success message hard_deleted / soft_deleted
+router.delete('/:id', (req, res) => {
+    Gif.findByIdAndDelete(req.params.id, (err, result) => {
+        if(err) {
+            console.log(err)
+            res.send('error')
+        } else {
+            console.log(result)
+            res.send('Gif was successfully deleted')
+        }
+    })
+})
 
 
 
