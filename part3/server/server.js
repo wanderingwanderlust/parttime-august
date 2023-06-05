@@ -5,7 +5,7 @@ import gifRouter from './routes/gifs.js'
 import { buildSchema } from 'graphql';
 import { graphqlHTTP } from "express-graphql"
 
-mongoose.connect('mongodb+srv://root:root@giphyapi.o3wilzu.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://root:root@giphyapi.jzy79se.mongodb.net/?retryWrites=true&w=majority');
 
 const app = express();
 const port = 3001 // react frontend app will run on port 3000
